@@ -1,0 +1,156 @@
+$dark: #374151;
+$darker: #1f2937;
+$darkest: #111827;
+$gray: #6b7280;
+$light: #eee;
+$pink: #ec4899;
+$purple: #8b5cf6;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(97, 94, 94, 0.76),
+      rgba(117, 19, 93, 0.432)
+    ),
+    url("https://www.lyricalhost.com/wp-content/uploads/2017/09/Lyrical-Host-Free-Stock-Download.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+header {
+  padding: 1.2rem 1rem;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #{$light};
+    margin-bottom: 1rem;
+  }
+
+  .todo-form {
+    display: flex;
+    #todo-input {
+      flex: 1 1 0;
+      background-color: rgba(14, 24, 39, 0.5);
+      padding: 0.5rem;
+      border-radius: 1rem;
+      margin-right: 1rem;
+      color: white;
+      font-size: 1rem;
+      &::placeholder {
+        color: white;
+      }
+    }
+    #todo-submit {
+      color: #{$pink};
+      font-weight: 700;
+      font-size: 1rem;
+      background-image: linear-gradient(to right, #{$light}, #{$light});
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: pointer;
+      transition: 0.4s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+      &:active {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+main {
+  flex: 1 1 0%;
+  padding: 0.75rem 1rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+
+  .todo-list {
+    padding: 1rem;
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: #{$light};
+      margin-bottom: 1rem;
+    }
+
+    .todo {
+      display: flex;
+      justify-content: space-between;
+      background-color: rgba(14, 24, 39, 0.5);
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 1rem;
+      transition: 0.5s ease-in-out;
+
+      .content {
+        width: 80%;
+        p {
+          font-size: small;
+        }
+        .text {
+          color: #{$light};
+          font-size: 1.4rem;
+          width: 100%;
+          display: block;
+          transition: 0.4s;
+
+          &:not(:read-only) {
+            color: rgb(177, 165, 173);
+          }
+        }
+      }
+      .actions {
+        display: flex;
+        margin: 0 -0.5rem;
+        button {
+          cursor: pointer;
+          margin: 0 0.5rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          transition: 0.4s;
+          i {
+            font-size: 2rem;
+          }
+          &:hover {
+            opacity: 0.8;
+          }
+          &:active {
+            opacity: 0.6;
+          }
+        }
+        .edit {
+          color: rgb(110, 253, 110);
+        }
+        .delete {
+          color: crimson;
+        }
+      }
+    }
+  }
+}
+
+input,
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
